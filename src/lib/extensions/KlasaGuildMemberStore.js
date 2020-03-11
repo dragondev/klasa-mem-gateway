@@ -1,10 +1,10 @@
-const { GuildMemberStore } = require('discord.js');
+const { GuildMemberManager } = require('discord.js');
 
 /**
  * Adds our extensions to d.js's MemberStore
- * @extends external:GuildMemberStore
+ * @extends external:GuildMemberManager
  */
-class KlasaGuildMemberStore extends GuildMemberStore {
+class KlasaGuildMemberStore extends GuildMemberManager {
 
 	async _fetchSingle(...args) {
 		const member = await super._fetchSingle(...args);
@@ -14,7 +14,7 @@ class KlasaGuildMemberStore extends GuildMemberStore {
 
 	async _fetchMany(...args) {
 		const members = await super._fetchMany(...args);
-		await Promise.all(members.map(member => member.settings.sync()));
+		await Promise.all(members.cache.map(member => member.settings.sync()));
 		return members;
 	}
 
