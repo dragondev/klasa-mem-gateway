@@ -8,7 +8,7 @@ Simple plugin to manage an efficient per-member settings gateway.
 
 ```bash
 # NPM
-$ npm install --save dragondev/klasa-member-master-gateway/
+$ npm install dragondev/klasa-member-master-gateway
 
 # Yarn
 $ yarn add https://github.com/dragondev/klasa-member-master-gateway.git
