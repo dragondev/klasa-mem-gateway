@@ -19,7 +19,7 @@ $ yarn add https://github.com/dragondev/klasa-member-master-gateway.git
 ```js
 const { Client } = require('klasa');
 
-Client.use(require('@klasa/member-gateway'));
+Client.use(require('klasa-member-gateway'));
 
 // Modifying the Schema
 Client.defaultMemberSchema
